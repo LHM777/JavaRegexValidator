@@ -18,4 +18,11 @@ public class RegexValidator{
         return Pattern.matches("\\d+", x);
     }
 	
+	
+	
+	public boolean DecimalNumber(String x){
+    
+        return Pattern.matches("\\d+(\\.\\d+)?", x);
+    }
+	
 }
