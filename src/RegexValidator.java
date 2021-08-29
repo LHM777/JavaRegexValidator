@@ -25,4 +25,11 @@ public class RegexValidator{
         return Pattern.matches("\\d+(\\.\\d+)?", x);
     }
 	
+	
+	
+    public boolean thousandsSeparator(String x){
+    
+        return Pattern.matches("(\\d{1,3})(\\,\\d{3})*", x);
+    }
+	
 }
