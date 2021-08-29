@@ -32,4 +32,11 @@ public class RegexValidator{
         return Pattern.matches("(\\d{1,3})(\\,\\d{3})*", x);
     }
 	
+	
+	
+	public boolean decimalsAndThousandsSeparators(String x){
+    
+        return Pattern.matches("(\\d{1,3})(\\,\\d{3})*(\\.\\d+)?", x);
+    }
+	
 }
