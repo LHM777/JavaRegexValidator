@@ -11,4 +11,11 @@ public class RegexValidator{
         return Pattern.matches("[a-zA-Z]+", x);
     }
 	
+	
+	
+	public boolean OneOrMoreNumbers(String x){
+    
+        return Pattern.matches("\\d+", x);
+    }
+	
 }
