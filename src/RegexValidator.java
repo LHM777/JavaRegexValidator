@@ -55,4 +55,21 @@ public class RegexValidator{
         return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
     }
 	
+	
+	
+	
+    /*Regex for values:
+            
+          00000.00000
+          .12345
+          0.12345
+          00000.12345
+          -12345.12345
+        
+    */
+    public boolean differentNumberPatterns(String x){
+    
+        return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
+    }
+	
 }
