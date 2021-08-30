@@ -47,4 +47,12 @@ public class RegexValidator{
         return Pattern.matches("\\-[1-9]+(\\.\\d+)*", x);
     }
 	
+	
+	
+	/*Regex for 12 and more decimal places*/
+    public boolean twelveOrMoreDecimalPlaces(String x){
+    
+        return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
+    }
+	
 }
