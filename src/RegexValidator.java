@@ -83,4 +83,12 @@ public class RegexValidator{
 	
 	
 	
+	/* Comma and white space separated decimal numbers Regex, allowing no leading digits and negative numbers*/
+    public boolean commaAndWhiteSpaceSeparatedNumbersRegex(String x){
+    
+        return Pattern.matches("(\\,*\\s*)*\\-?\\d*(\\.\\d+)?((\\,+|\\s+)\\-?\\d*(\\.\\d+)?)+(\\,*\\s*)*", x);
+    }
+	
+	
+	
 }
