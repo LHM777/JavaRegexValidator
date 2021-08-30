@@ -72,4 +72,15 @@ public class RegexValidator{
         return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
     }
 	
+	
+	
+	
+	/* Regex for value: -12,345.12345 */
+    public boolean negativeNumbersWithThousandsSeparators(String x){
+    
+        return Pattern.matches("\\-[1-9]{1,3}(\\,\\d{3})+(\\.\\d+)?", x);
+    }
+	
+	
+	
 }
