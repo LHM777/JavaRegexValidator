@@ -39,4 +39,12 @@ public class RegexValidator{
         return Pattern.matches("(\\d{1,3})(\\,\\d{3})*(\\.\\d+)?", x);
     }
 	
+	
+	
+	/*Regex for negative numbers including decimal numbers*/
+	public boolean negativeNumbers(String x){
+    
+        return Pattern.matches("\\-[1-9]+(\\.\\d+)*", x);
+    }
+	
 }
