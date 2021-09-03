@@ -21,6 +21,14 @@ public class RegexValidator{
 	
 	
 	
+	//a-z or A-Z occur at least 1 time but no more than 6 times
+    public boolean onlyLettersPart3(String x){
+    
+        return Pattern.matches("[a-zA-Z]{1,6}", x);
+    }
+	
+	
+	
 	public boolean OneOrMoreNumbers(String x){
     
         return Pattern.matches("\\d+", x);
