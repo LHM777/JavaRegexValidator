@@ -56,6 +56,14 @@ public class RegexValidator{
 	
 	
 	
+	// regular expression that accepts alphanumeric characters. Its length must be six characters long only.
+    public boolean alphaNumbericSixCharacters(String x){
+    
+        return Pattern.matches("\\w{6}", x);
+    }
+	
+	
+	
 	public boolean DecimalNumber(String x){
     
         return Pattern.matches("\\d+(\\.\\d+)?", x);
