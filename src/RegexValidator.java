@@ -13,6 +13,14 @@ public class RegexValidator{
 	
 	
 	
+	//a-z and A-Z occurs six times only
+    public boolean onlyLettersSixCharacters(String x){
+    
+        return Pattern.matches("[a-zA-Z]{6}", x);
+    }
+	
+	
+	
 	public boolean OneOrMoreNumbers(String x){
     
         return Pattern.matches("\\d+", x);
