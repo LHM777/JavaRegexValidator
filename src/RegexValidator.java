@@ -36,6 +36,14 @@ public class RegexValidator{
 	
 	
 	
+    //digit character occurs only one time
+    public boolean onlyOneNumber(String x){
+    
+        return Pattern.matches("\\d", x);
+    }
+	
+	
+	
 	public boolean DecimalNumber(String x){
     
         return Pattern.matches("\\d+(\\.\\d+)?", x);
