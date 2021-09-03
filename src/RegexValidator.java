@@ -29,6 +29,10 @@ public class RegexValidator{
 	
 	
 	
+
+	
+	
+	
 	public boolean OneOrMoreNumbers(String x){
     
         return Pattern.matches("\\d+", x);
@@ -40,6 +44,14 @@ public class RegexValidator{
     public boolean onlyOneNumber(String x){
     
         return Pattern.matches("\\d", x);
+    }
+	
+	
+	
+    //digit characters occur at least 1 time but no more than 6 times
+    public boolean onlyNumbersPart3(String x){
+    
+        return Pattern.matches("\\d{1,6}", x);
     }
 	
 	
