@@ -128,6 +128,15 @@ public class RegexValidator{
 	
 	
 	
+	/*1-3 digits 0-1 times*/
+    public boolean OneToThreeDigits(String x){
+    
+        return Pattern.matches("(\\d{1,3})+", x);
+    }
+	
+	
+	
+	
     /*Regex for values:
             
           00000.00000
