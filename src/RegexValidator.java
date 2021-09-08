@@ -110,6 +110,15 @@ public class RegexValidator{
 	
 	
 	
+	/*If you want to allow a dot then no digits*/
+    public boolean allowDotsThenNoDigits(String x){
+    
+        return Pattern.matches("\\d+(\\.\\d+)?", x);
+    }
+	
+	
+	
+	
     /*Regex for values:
             
           00000.00000
