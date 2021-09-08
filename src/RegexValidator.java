@@ -119,6 +119,15 @@ public class RegexValidator{
 	
 	
 	
+	/*Allowing no leading digits and a single dot*/
+    public boolean allowNoLeadingDigits(String x){
+    
+        return Pattern.matches("\\d+(\\.\\d*)?|\\.\\d+|\\.?", x);
+    }
+	
+	
+	
+	
     /*Regex for values:
             
           00000.00000
