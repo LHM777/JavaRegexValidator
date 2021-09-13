@@ -170,7 +170,7 @@ public class RegexValidator{
 	
 	
 	
-	/* Comma and white space separated decimal numbers Regex, allowing no leading digits and negative numbers*/
+	/*1 comma followed by 3 digits any number of times*/
     public boolean oneCommaFollowedByThreeDigits(String x){
     
         return Pattern.matches("(\\,\\d{3})*", x);
