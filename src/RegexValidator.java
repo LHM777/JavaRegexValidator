@@ -178,4 +178,12 @@ public class RegexValidator{
 	
 	
 	
+	/*single . followed by any number of digits 0-1 times*/
+    public boolean singleDotFollowedByAnyNumber(String x){
+    
+        return Pattern.matches("\\.\\d+", x);
+    }
+	
+	
+	
 }
