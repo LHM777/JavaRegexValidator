@@ -170,4 +170,12 @@ public class RegexValidator{
 	
 	
 	
+	/* Comma and white space separated decimal numbers Regex, allowing no leading digits and negative numbers*/
+    public boolean oneCommaFollowedByThreeDigits(String x){
+    
+        return Pattern.matches("(\\,\\d{3})*", x);
+    }
+	
+	
+	
 }
