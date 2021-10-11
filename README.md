@@ -83,3 +83,66 @@ We used the RegexValidator class' onlyLettersSixCharacters() method to validate 
 ```
 
 
+
+
+# Check if input string contains only letters. It must have at least 1 character in length but no more than 6 characters long.
+The code below shows a way to check if the input field only contains letters and whether it is at least 1 character long and no more than 6 characters long otherwise it will be invalid.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it's at least 1 character long.
+String input = "a";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only letters are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will be valid because it's at least 4 characters long.
+String input = "abcd";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only letters are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will be valid because it's 6 characters long.
+String input = "abcdef";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only letters are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will not be valid because it's more than 6 characters long.
+String input = "abcdefg";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only letters are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+```
+
+
+
+We used the RegexValidator class' onlyLettersPart3() method to validate the input field. The code below shows the onlyLettersPart3() method of the RegexValidator class:
+
+```java
+
+    public boolean onlyLettersPart3(String x){
+    
+        return Pattern.matches("[a-zA-Z]{1,6}", x);
+    }
+    
+```
+
