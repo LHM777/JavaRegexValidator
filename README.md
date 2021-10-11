@@ -146,3 +146,35 @@ We used the RegexValidator class' onlyLettersPart3() method to validate the inpu
     
 ```
 
+
+
+
+# Check if input string contains only numbers.
+The code below shows a simple way to check if the input field only contains numbers. If the value of the input field is not valid, then store an error message:
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+String input = "123456";
+
+if(!regexValidator.OneOrMoreNumbers(input)){
+
+    String inputErr = "Only numbers are allowed";
+}
+
+```
+
+
+
+We used the RegexValidator class' OneOrMoreNumbers() method to validate the input field. The code below shows the OneOrMoreNumbers() method of the RegexValidator class:
+
+```java
+
+    public boolean OneOrMoreNumbers(String x){
+    
+        return Pattern.matches("\\d+", x);
+    }
+    
+```
+
