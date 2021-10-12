@@ -231,3 +231,75 @@ We used the RegexValidator class' onlyOneNumber() method to validate the input f
     
 ```
 
+
+
+
+# Check if input string contains only numbers.It must have at least 1 character in length but no more than 6 characters long.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it's at least 1 character long.
+String input = "1";
+
+if(!regexValidator.onlyNumbersPart3(input)){
+
+    String inputErr = "Only numbers are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will be valid because it's 4 characters long.
+String input = "1234";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only numbers are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will be valid because it's 6 characters long.
+String input = "123456";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+   String inputErr = "Only numbers are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+
+//This input will not be valid because it's more than 6 characters long.
+String input = "1234567";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only numbers are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+
+//This input will not be valid because it contains letters.
+String input = "123abc";
+
+if(!regexValidator.onlyLettersPart3(input)){
+
+    String inputErr = "Only numbers are allowed, and it should be at least 1 character long but no more than 6 characters long.";
+}
+
+```
+
+
+
+We used the RegexValidator class' onlyNumbersPart3() method to validate the input field. The code below shows the onlyNumbersPart3() method of the RegexValidator class:
+
+```java
+
+    public boolean onlyNumbersPart3(String x){
+    
+        return Pattern.matches("\\d{1,6}", x);
+    }
+    
+```
+
