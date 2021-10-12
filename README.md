@@ -178,3 +178,56 @@ We used the RegexValidator class' OneOrMoreNumbers() method to validate the inpu
     
 ```
 
+
+
+
+# Check if input string contains only numbers. It must be only one character long.
+
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it's only 1 character long.
+String input = "1";
+
+if(!regexValidator.onlyOneNumber(input)){
+
+    String inputErr = "Only numbers are allowed, and it should only be 1 character long.";
+}
+
+
+
+//This input will not be valid because it's 2 characters long.
+String input = "12";
+
+if(!regexValidator.onlyOneNumber(input)){
+
+    String inputErr = "Only numbers are allowed, and it should only be 1 character long.";
+}
+
+
+
+//This input will not be valid because it includes letters.
+String input = "abcdef11";
+
+if(!regexValidator.onlyOneNumber(input)){
+
+    String inputErr = "Only numbers are allowed, and it should only be 1 character long.";
+}
+
+```
+
+
+We used the RegexValidator class' onlyOneNumber() method to validate the input field. The code below shows the onlyOneNumber() method of the RegexValidator class:
+
+```java
+
+    public boolean onlyOneNumber(String x){
+    
+        return Pattern.matches("\\d", x);
+    }
+    
+```
+
