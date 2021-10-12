@@ -377,3 +377,72 @@ We used the RegexValidator class' alphaNumbericSixCharacters() method to validat
     
 ```
 
+
+
+
+# Check if input string contains only numbers. Decimal numbers are accepted.
+The code below shows a way to check if the input field only contains numbers and decimals:
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only numbers.
+String input = "123";
+
+if(!regexValidator.DecimalNumber(input)){
+
+    String inputErr = "Only numbers and decimals are allowed";
+}
+
+
+
+//This input will be valid because it is a decimal number.
+String input = "123.123";
+
+if(!regexValidator.DecimalNumber(input)){
+
+    String inputErr = "Only numbers and decimals are allowed";
+}
+
+
+
+//This input will not be valid because it has no leading digits.
+String input = ".123";
+
+if(!regexValidator.DecimalNumber(input)){
+
+   String inputErr = "Only numbers and decimals are allowed";
+}
+
+
+
+//This input will not be valid because it's not a proper decimal format.
+String input = "12345.12345.12345";
+
+if(!regexValidator.DecimalNumber(input)){
+
+    String inputErr = "Only numbers and decimals are allowed";
+}
+
+
+
+```
+
+
+
+We used the RegexValidator class' DecimalNumber() method to validate the input field. 
+The code below shows the DecimalNumber() method of the RegexValidator class:
+
+```java
+
+    public boolean DecimalNumber(String x){
+    
+        return Pattern.matches("\\d+(\\.\\d+)?", x);
+    }
+    
+```
+
+
+
