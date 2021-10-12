@@ -446,3 +446,73 @@ The code below shows the DecimalNumber() method of the RegexValidator class:
 
 
 
+
+# Check if input string contains only numbers. Numbers greater than 1,000 should have thousand separators.
+The code below shows a way to check if the input field only contains numbers. It doesn't accept decimals. 
+Numbers greater than 1,000 should have thousand separators.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only numbers.
+//It is less than 1,000 so it's not required to have thousand separator.
+String input = "123";
+
+if(!regexValidator.thousandsSeparator(input)){
+
+    String inputErr = "Only numbers are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will be valid because it contains only numbers.
+//It has a thousand separator.
+String input = "1,234";
+
+if(!regexValidator.thousandsSeparator(input)){
+
+    String inputErr = "Only numbers are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will not be valid because it has decimal digits.
+String input = "123.123";
+
+if(!regexValidator.thousandsSeparator(input)){
+
+   String inputErr = "Only numbers are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will not be valid because the thousand separator is in the wrong place.
+String input = "1234,5";
+
+if(!regexValidator.thousandsSeparator(input)){
+
+    String inputErr = "Only numbers are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+```
+
+
+
+We used the RegexValidator class' thousandsSeparator() method to validate the input field. 
+The code below shows the thousandsSeparator() method of the RegexValidator class:
+
+```java
+
+    public boolean thousandsSeparator(String x){
+    
+        return Pattern.matches("(\\d{1,3})(\\,\\d{3})*", x);
+    }
+    
+```
+
+
+
