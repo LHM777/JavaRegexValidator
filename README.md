@@ -85,7 +85,7 @@ We used the RegexValidator class' onlyLettersSixCharacters() method to validate 
 
 
 
-# Check if input string contains only letters. It must have at least 1 character in length but no more than 6 characters long.
+# Check if input string contains only letters. It should be at least 1 character in length but no more than 6 characters long.
 The code below shows a way to check if the input field only contains letters and whether it is at least 1 character long and no more than 6 characters long otherwise it will be invalid.
 
 
@@ -181,7 +181,7 @@ We used the RegexValidator class' OneOrMoreNumbers() method to validate the inpu
 
 
 
-# Check if input string contains only numbers. It must be only one character long.
+# Check if input string contains only numbers. It should be only one character long.
 
 
 
@@ -234,7 +234,7 @@ We used the RegexValidator class' onlyOneNumber() method to validate the input f
 
 
 
-# Check if input string contains only numbers.It must have at least 1 character in length but no more than 6 characters long.
+# Check if input string contains only numbers. It should be at least 1 character in length but no more than 6 characters long.
 
 
 ```java
@@ -299,6 +299,80 @@ We used the RegexValidator class' onlyNumbersPart3() method to validate the inpu
     public boolean onlyNumbersPart3(String x){
     
         return Pattern.matches("\\d{1,6}", x);
+    }
+    
+```
+
+
+
+
+# Check if input string contains alphanumeric characters. It should only be up to six characters long.
+The code below shows a simple way to check if the input field contains alphanumeric characters. If the value of the input field is not valid, then store an error message:
+
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains alphanumeric characters and it's length is only up to six characters long.
+String input = "123abc";
+
+if(!regexValidator.alphaNumbericSixCharacters(input)){
+
+    String inputErr = "Only alphanumeric inputs are allowed.";
+}
+
+
+
+//This input will be valid because it contains alphanumeric characters and it's length is only up to four characters long.
+String input = "1abc";
+
+if(!regexValidator.alphaNumbericSixCharacters(input)){
+
+    String inputErr = "Only alphanumeric inputs are allowed.";
+}
+
+
+
+//This input will not be valid because it's 9 characters long.
+String input = "123456abc";
+
+if(!regexValidator.alphaNumbericSixCharacters(input)){
+
+   String inputErr = "Only alphanumeric inputs are allowed.";
+}
+
+
+
+//This input will not be valid because it's only contains digits.
+String input = "12345";
+
+if(!regexValidator.alphaNumbericSixCharacters(input)){
+
+    String inputErr = "Only alphanumeric inputs are allowed.";
+}
+
+
+//This input will not be valid because it only contains letters.
+String input = "abc";
+
+if(!regexValidator.alphaNumbericSixCharacters(input)){
+
+    String inputErr = "Only alphanumeric inputs are allowed.";
+}
+
+```
+
+
+
+We used the RegexValidator class' alphaNumbericSixCharacters() method to validate the input field. The code below shows the alphaNumbericSixCharacters() method of the RegexValidator class:
+
+```java
+
+    public boolean alphaNumbericSixCharacters(String x){
+    
+        return Pattern.matches("\\w{6}", x);
     }
     
 ```
