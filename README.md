@@ -621,3 +621,95 @@ The code below shows the decimalsAndThousandsSeparators() method of the RegexVal
 
 
 
+# Check if input string contains only negative numbers.
+The code below shows a way to check if the input field only contains negative numbers. It accepts decimals.
+It doesn't accept thousand separators.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only negative numbers.
+String input = "-123";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+
+
+//This input will be valid because it contains only negative numbers.
+//Decimals are also allowed.
+String input = "-1234.1234";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+
+
+//This input will not be valid because it is not a negative number.
+//It is less than 1,000 so it's not required to have thousand separators on the 
+//whole number part.
+String input = "123.123";
+
+if(!regexValidator.negativeNumbers(input)){
+
+   String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+
+
+//This input will not be valid because it is not a negative number.
+//It also has thousand separators, which is not allowed.
+String input = "1,234.123";
+
+if(!regexValidator.negativeNumbers(input)){
+
+   String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+
+
+//This input will not be valid because it is not a negative number.
+//It is also not a proper number format
+String input = "1234,5";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+
+
+//This input will not be valid because contains letters.
+String input = "-12345.12345abc";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed.";
+}
+
+```
+
+
+
+We used the RegexValidator class' negativeNumbers() method to validate the input field. 
+The code below shows the negativeNumbers() method of the RegexValidator class:
+
+```java
+
+    public boolean negativeNumbers(String x){
+    
+        return Pattern.matches("\\-[1-9]+(\\.\\d+)*", x);
+    }
+    
+```
+
+
+
+
+
