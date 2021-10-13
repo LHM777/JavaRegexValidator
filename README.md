@@ -607,3 +607,17 @@ if(!regexValidator.decimalsAndThousandsSeparators(input)){
 
 
 
+We used the RegexValidator class' decimalsAndThousandsSeparators() method to validate the input field. 
+The code below shows the decimalsAndThousandsSeparators() method of the RegexValidator class:
+
+```java
+
+    public boolean decimalsAndThousandsSeparators(String x){
+    
+        return Pattern.matches("(\\d{1,3})(\\,\\d{3})*(\\.\\d+)?", x);
+    }
+    
+```
+
+
+
