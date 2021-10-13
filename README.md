@@ -516,3 +516,94 @@ The code below shows the thousandsSeparator() method of the RegexValidator class
 
 
 
+
+# Check if input string contains only numbers and decimals. Numbers greater than 1,000 should have thousand separators.
+The code below shows a way to check if the input field only contains numbers and decimals. 
+Numbers greater than 1,000 should have thousand separators.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only numbers.
+//It is less than 1,000 so it's not required to have thousand separators.
+String input = "123";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+    String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will be valid because it contains only numbers.
+//It has a thousand separator.
+String input = "1,234";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+    String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will be valid because it is a decimal number.
+//It is less than 1,000 so it's not required to have thousand separators on the 
+//whole number part.
+String input = "123.123";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+   String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will be valid because it is a decimal number.
+//It is greater than 1,000 so it's required to have thousand separators 
+//on the whole number part.
+String input = "1,234.123";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+   String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will not be valid because the thousand separator is in the wrong place.
+String input = "1234,5";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+    String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will not be valid because the thousand separator is in the decimal numbers.
+//It is not a proper format
+String input = "12345.12,345";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+    String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+//This input will not be valid because it contains letters.
+String input = "1,2345.12345abc";
+
+if(!regexValidator.decimalsAndThousandsSeparators(input)){
+
+    String inputErr = "Only numbers and decimals are allowed. Numbers greater than 1,000 should have thousand separators.";
+}
+
+
+
+```
+
+
+
