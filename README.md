@@ -1,3 +1,26 @@
+# Table of Contents
+- [JavaRegexValidator](#javaregexvalidator)
+- [Only letters.](#check-if-input-string-contains-only-letters)
+- [Only letters. It must occur only 6 times.](#check-if-input-string-contains-only-letters-it-must-occur-only-6-times)
+- [Only letters. It should be at least 1 character in length but no more than 6 characters long.](#check-if-input-string-contains-only-letters-it-should-be-at-least-1-character-in-length-but-no-more-than-6-characters-long)
+- [Check if input string contains only numbers.](#check-if-input-string-contains-only-numbers)
+- [Only numbers. It should be only one character long.](#check-if-input-string-contains-only-numbers-it-should-be-only-one-character-long)
+- [Only numbers. It should be at least 1 character in length but no more than 6 characters long.](#check-if-input-string-contains-only-numbers-it-should-be-at-least-1-character-in-length-but-no-more-than-6-characters-long)
+- [Alphanumeric characters. It should only be up to six characters long.](#check-if-input-string-contains-alphanumeric-characters-it-should-only-be-up-to-six-characters-long)
+- [Only numbers. Decimal numbers are accepted.](#check-if-input-string-contains-only-numbers-decimal-numbers-are-accepted)
+- [Only numbers. Numbers greater than 1,000 should have thousand separators.](#check-if-input-string-contains-only-numbers-numbers-greater-than-1000-should-have-thousand-separators)
+- [Only numbers and decimals. Numbers greater than 1,000 should have thousand separators.](#check-if-input-string-contains-only-numbers-and-decimals-numbers-greater-than-1000-should-have-thousand-separators)
+- [Check if input string contains only negative numbers.](#check-if-input-string-contains-only-negative-numbers)
+- [Only numbers with decimals. It should have 12 or more decimal places. Negative numbers are allowed.](#check-if-input-string-contains-only-numbers-with-decimals-it-should-have-12-or-more-decimal-places-negative-numbers-are-allowed)
+- [Only decimal numbers. Whole numbers are not accepted.](#check-if-input-string-contains-only-decimal-numbers-whole-numbers-are-not-accepted)
+- [Only negative numbers and decimals. Positive whole numbers are not accepted. It must include thousand separators.](#check-if-input-string-contains-only-negative-numbers-and-decimals-positive-whole-numbers-are-not-accepted-it-must-include-thousand-separators)
+- [Accept different number formats](#accept-different-number-formats)
+- [Accept comma, whitespace, and newline separated numbers](#accept-comma-whitespace-and-newline-separated-numbers)
+
+
+
+
+
 # JavaRegexValidator
 This Java Class can be used for validating input strings using REGEX. Below, I will show how you can use this class for validating various string inputs.
 
