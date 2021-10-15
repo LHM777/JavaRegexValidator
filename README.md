@@ -1003,5 +1003,34 @@ The code below shows the negativeNumbersWithThousandsSeparators() method of the 
 
 
 
+# Accept different number formats.
+The code below shows a way to check for different number formats(e.g. 00000.00000, .12345, 0.12345, 00000.12345, -12345.12345)
+
+
+We used the RegexValidator class' differentNumberPatterns() method to validate the input field. 
+The code below shows the differentNumberPatterns() method of the RegexValidator class:
+
+```java
+
+   /*Regex for values:
+            
+          00000.00000
+          .12345
+          0.12345
+          00000.12345
+          -12345.12345
+        
+    */
+    
+    public boolean differentNumberPatterns(String x){
+    
+        return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
+    }
+    
+```
+
+
+
+
 
 
