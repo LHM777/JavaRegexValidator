@@ -1032,5 +1032,69 @@ The code below shows the differentNumberPatterns() method of the RegexValidator 
 
 
 
+# Accept comma, whitespace, and newline separated numbers.
+The code below shows a way to check for comma, whitespace, and newline separated numbers. It allows negative and positive numbers and decimals. Letters are not allowed.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//Example input.
+//This is valid.
+String input = ", ,-.12345, ,, ,  2 3, -1.12345, -00000.00000,6, ,";
+
+if(!regexValidator.commaAndWhiteSpaceSeparatedNumbersRegex(input)){
+
+    String inputErr = "Pls. check your input.";
+}
+
+
+
+RegexValidator regexValidator = new RegexValidator();
+
+//Example input #2.
+//This is valid.
+String input = ", ,.12345, ,, ,  2 3, 1.12345, 00000.00000,6, ,";
+
+if(!regexValidator.commaAndWhiteSpaceSeparatedNumbersRegex(input)){
+
+    String inputErr = "Pls. check your input.";
+}
+
+
+
+RegexValidator regexValidator = new RegexValidator();
+
+//Example input #3.
+//This is not valid because it contains letters.
+String input = ", ,-.12345, ,, ,  2 3, -1.12345, -00000.00000,6, ,ab";
+
+if(!regexValidator.commaAndWhiteSpaceSeparatedNumbersRegex(input)){
+
+    String inputErr = "Pls. check your input.";
+}
+
+
+```
+
+
+
+We used the RegexValidator class' commaAndWhiteSpaceSeparatedNumbersRegex() method to validate the input field. 
+The code below shows the commaAndWhiteSpaceSeparatedNumbersRegex() method of the RegexValidator class:
+
+```java
+
+    /* Comma and white space separated decimal numbers Regex, allowing no leading digits and negative numbers*/
+    public boolean commaAndWhiteSpaceSeparatedNumbersRegex(String x){
+    
+        return Pattern.matches("(\\,*\\s*)*\\-?\\d*(\\.\\d+)?((\\,+|\\s+)\\-?\\d*(\\.\\d+)?)+(\\,*\\s*)*", x);
+    }
+    
+```
+
+
+
+
 
 
