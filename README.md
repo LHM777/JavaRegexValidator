@@ -903,5 +903,105 @@ The code below shows the singleDotFollowedByAnyNumber() method of the RegexValid
 
 
 
+# Check if input string contains only negative numbers and decimals. Positive whole numbers are not accepted. It must include thousand separators.
+The code below shows a way to check if the input field only contains negative numbers and decimals. It accepts any number of decimal places.
+positive whole numbers are not accepted. It must include thousand separators for numbers greater than 1,000.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only negative numbers and decimals.
+//It has no whole number part.
+String input = "-145.123456789122";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+
+//This input will be valid because it contains only negative numbers and decimals.
+//There is also a thousand separator.
+String input = "-1,234.123456789122345";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+
+
+
+//This input will not be valid because it contains positive whole number.
+String input = "123.123";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+   String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+
+//This input will not be valid because it contains positive whole number.
+String input = "1,234.123";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+  String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+
+//This input will not be valid because it is not a proper number format.
+String input = "1234,5";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+
+//This input will not be valid because contains letters.
+//It also has no thousand separators
+String input = "-12345.12345abc";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+
+//This input will not be valid because it has no thousand separator.
+String input = "-12345.12345";
+
+if(!regexValidator.negativeNumbersWithThousandsSeparators(input)){
+
+    String inputErr = "Only negative numbers and decimals are allowed. Please include thousand separators for numbers greater than 1,000";
+}
+
+```
+
+
+
+We used the RegexValidator class' negativeNumbersWithThousandsSeparators() method to validate the input field. 
+The code below shows the negativeNumbersWithThousandsSeparators() method of the RegexValidator class:
+
+```java
+
+    public boolean negativeNumbersWithThousandsSeparators(String x){
+    
+        return Pattern.matches("\\-[1-9]{1,3}(\\,\\d{3})+(\\.\\d+)?", x);
+    }
+    
+```
+
+
+
+
 
 
