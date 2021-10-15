@@ -814,8 +814,92 @@ The code below shows the twelveOrMoreDecimalPlaces() method of the RegexValidato
 
 
 
-# Check if input string contains only decimal numbers. Decimals with whole numbers are not allowed. Numbers without decimals are not allowed.
-The code below shows a way to check if the input field only contains decimal numbers. It doesn't accept whole numbers. 
+# Check if input string contains only decimal numbers. Whole numbers are not accepted.
+The code below shows a way to check if the input field only contains decimal numbers. It accepts any number of decimal places.
+Whole numbers are not accepted.
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only decimal numbers.
+//It has no whole number part.
+String input = ".123456789122";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+    String inputErr = "Only decimal numbers are allowed.";
+}
+
+
+
+//This input will not be valid because it contains whole number.
+String input = "-1234.123456789122345";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+    String inputErr = "Only decimal numbers are allowed.";
+}
+
+
+
+
+
+//This input will not be valid because it contains whole number.
+String input = "123.123";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+   String inputErr = "Only decimal numbers are allowed.";
+}
+
+
+
+//This input will not be valid because it contains whole number.
+//It also has less than 12 decimal places.
+String input = "1,234.123";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+   String inputErr = "Only decimal numbers are allowed.";
+}
+
+
+
+//This input will not be valid because it is not a proper number format.
+String input = "1234,5";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+    String inputErr = "Only decimal numbers are allowed.";
+}
+
+
+
+//This input will not be valid because contains letters and whole numbers.
+String input = "-12345.12345abc";
+
+if(!regexValidator.singleDotFollowedByAnyNumber(input)){
+
+    String inputErr = "Only decimal numbers are allowed.";
+}
+
+```
+
+
+
+We used the RegexValidator class' singleDotFollowedByAnyNumber() method to validate the input field. 
+The code below shows the singleDotFollowedByAnyNumber() method of the RegexValidator class:
+
+```java
+
+    public boolean singleDotFollowedByAnyNumber(String x){
+    
+        return Pattern.matches("\\.\\d+", x);
+    }
+    
+```
+
 
 
 
