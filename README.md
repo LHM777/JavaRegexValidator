@@ -712,4 +712,106 @@ The code below shows the negativeNumbers() method of the RegexValidator class:
 
 
 
+# Check if input string contains only numbers with decimals. It should have 12 or more decimal places. Negative numbers are allowed.
+The code below shows a way to check if the input field only contains numbers with decimals. It doesn't accept thousand separators. 
+Decimals without whole numbers are accepted. Numbers without decimals are not accepted. Letters not accepted.
+
+
+```java
+
+RegexValidator regexValidator = new RegexValidator();
+
+//This input will be valid because it contains only decimal numbers.
+//It also has 12 decimal places.
+String input = "123.123456789122";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will be valid because it contains only decimal numbers.
+//Negative whole numbers are also allowed.
+//It also has 15 decimal places.
+String input = "-1234.123456789122345";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will be valid because it contains only decimal numbers.
+//Decimal numbers without whole numbers are allowed
+//It also has 15 decimal places.
+String input = ".123456789122345";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will not be valid because it is not has less than 12 decimal places.
+String input = "123.123";
+
+if(!regexValidator.negativeNumbers(input)){
+
+   String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will not be valid because has a thousand separator.
+//It also has less than 12 decimal places.
+String input = "1,234.123";
+
+if(!regexValidator.negativeNumbers(input)){
+
+   String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will not be valid because it is not a proper number format.
+String input = "1234,5";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+
+
+//This input will not be valid because contains letters.
+String input = "-12345.12345abc";
+
+if(!regexValidator.negativeNumbers(input)){
+
+    String inputErr = "Only decimal numbers are allowed. It should be 12 decimal places or more.";
+}
+
+```
+
+
+
+We used the RegexValidator class' twelveOrMoreDecimalPlaces() method to validate the input field. 
+The code below shows the twelveOrMoreDecimalPlaces() method of the RegexValidator class:
+
+```java
+
+    public boolean twelveOrMoreDecimalPlaces(String x){
+    
+        return Pattern.matches("(\\d+)(\\.\\d{12,})|\\-[1-9]+(\\.\\d{12,})|\\.\\d{12,}", x);
+    }
+    
+```
+
+
+
+
 
